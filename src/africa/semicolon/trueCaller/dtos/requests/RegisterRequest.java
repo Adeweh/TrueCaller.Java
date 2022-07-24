@@ -1,11 +1,6 @@
-package africa.semicolon.trueCaller.data.models;
+package africa.semicolon.trueCaller.dtos.requests;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class User {
-
-    private int id;
+public class RegisterRequest {
     private String firstName;
     private String lastName;
     private String phoneNumber;
@@ -13,32 +8,6 @@ public class User {
     private String email;
 
     private String passWord;
-
-    private List<Contact> allContacts = new ArrayList<>();
-
-    public String getPassWord() {
-        return passWord;
-    }
-
-    public void setPassWord(String passWord) {
-        this.passWord = passWord;
-    }
-
-    public List<Contact> getAllContacts() {
-        return allContacts;
-    }
-
-    public void setAllContacts(List<Contact> allContacts) {
-        this.allContacts = allContacts;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getFirstName() {
         return firstName;
@@ -72,4 +41,12 @@ public class User {
         this.email = email;
     }
 
+    public String getPassWord() {
+        return passWord;
+    }
+
+    public void setPassWord(String passWord) {
+        this.passWord = passWord;
+    }
 }
+

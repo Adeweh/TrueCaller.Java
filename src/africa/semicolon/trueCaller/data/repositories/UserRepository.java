@@ -2,6 +2,7 @@ package africa.semicolon.trueCaller.data.repositories;
 
 import africa.semicolon.trueCaller.data.models.Contact;
 import africa.semicolon.trueCaller.data.models.User;
+import africa.semicolon.trueCaller.dtos.requests.RegisterRequest;
 
 import java.util.List;
 
@@ -16,5 +17,8 @@ public interface UserRepository {
     List<User> findAll();
 
     int count();
+
+    User findByEmail(String email);
+
 
 }

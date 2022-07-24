@@ -81,4 +81,12 @@ public class UserRepositoryImpl implements UserRepository {
     public int count() {
         return allUsers.size();
     }
+
+    @Override
+    public User findByEmail(String email) {
+        for (var user: allUsers){
+            if(user.getEmail().equalsIgnoreCase(email)) return user;
+        }
+        return null;
+    }
 }
