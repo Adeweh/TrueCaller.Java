@@ -16,9 +16,11 @@ public interface UserRepository {
     List<User> findByLastName(String lastName);
     List<User> findAll();
 
+    User findByEmail(String email);
+
     int count();
 
-    User findByEmail(String email);
+
 
 
 }

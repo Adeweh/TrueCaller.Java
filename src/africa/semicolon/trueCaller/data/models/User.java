@@ -8,37 +8,48 @@ public class User {
     private int id;
     private String firstName;
     private String lastName;
-    private String phoneNumber;
+
+    private String username;
 
     private String email;
 
-    private String passWord;
+    private String password;
 
-    private List<Contact> allContacts = new ArrayList<>();
+    private final List<Contact> allContacts = new ArrayList<>();
 
-    public String getPassWord() {
-        return passWord;
+
+
+    public void addContact(Contact contact){
+        allContacts.add(contact);
     }
 
-    public void setPassWord(String passWord) {
-        this.passWord = passWord;
+    public void deleteContact(Contact contact){
+        allContacts.remove(contact);
     }
 
     public List<Contact> getAllContacts() {
         return allContacts;
     }
 
-    public void setAllContacts(List<Contact> allContacts) {
-        this.allContacts = allContacts;
-    }
-
     public int getId() {
         return id;
     }
-
     public void setId(int id) {
         this.id = id;
     }
+
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+    public void setPassWord(String passWord) {
+        this.password = passWord;
+    }
+
 
     public String getFirstName() {
         return firstName;
@@ -56,13 +67,6 @@ public class User {
         this.lastName = lastName;
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
 
     public String getEmail() {
         return email;

@@ -11,7 +11,6 @@ class UserRepositoryImplTest {
     public void saveUser_CountIncreasesTest(){
         UserRepository userRepository = new UserRepositoryImpl();
         User user = new User();
-        user.setPhoneNumber("2209");
         user.setFirstName("Dee");
         user.setLastName("Ade");
         user.setEmail("Ade@email.com");
@@ -23,7 +22,6 @@ class UserRepositoryImplTest {
     public void saveUser_findByIndexTest(){
         UserRepository userRepository = new UserRepositoryImpl();
         User user = new User();
-        user.setPhoneNumber("2209");
         user.setFirstName("Dee");
         user.setLastName("Ade");
         user.setEmail("Ade@email.com");
@@ -38,7 +36,6 @@ class UserRepositoryImplTest {
     public void deleteUSer_CountDecreasesTest(){
         UserRepository userRepository = new UserRepositoryImpl();
         User user = new User();
-        user.setPhoneNumber("2209");
         user.setFirstName("Dee");
         user.setLastName("Ade");
         user.setEmail("Ade@email.com");
@@ -53,7 +50,6 @@ class UserRepositoryImplTest {
     public void deleteUser_byIndexTest(){
         UserRepository userRepository = new UserRepositoryImpl();
         User user = new User();
-        user.setPhoneNumber("2209");
         user.setFirstName("Dee");
         user.setLastName("Ade");
         user.setEmail("Ade@email.com");
@@ -72,12 +68,11 @@ class UserRepositoryImplTest {
         User user = new User();
         User user1 = new User();
 
-        user.setPhoneNumber("2209");
         user.setFirstName("Dee");
         user.setLastName("Ade");
         user.setEmail("Ade@email.com");
 
-        user1.setPhoneNumber("0543");
+
         user1.setFirstName("Wonders");
         user1.setLastName("Adeh");
         user1.setEmail("Adeh@email.com");
@@ -98,12 +93,10 @@ class UserRepositoryImplTest {
         User user = new User();
         User user1 = new User();
 
-        user.setPhoneNumber("2209");
         user.setFirstName("Dee");
         user.setLastName("Ade");
         user.setEmail("Ade@email.com");
 
-        user1.setPhoneNumber("0543");
         user1.setFirstName("Wonders");
         user1.setLastName("Adeh");
         user1.setEmail("Adeh@email.com");
@@ -120,12 +113,11 @@ class UserRepositoryImplTest {
         User user = new User();
         User user1 = new User();
 
-        user.setPhoneNumber("2209");
+
         user.setFirstName("Dee");
         user.setLastName("Ade");
         user.setEmail("Ade@email.com");
 
-        user1.setPhoneNumber("0543");
         user1.setFirstName("Wonders");
         user1.setLastName("Adeh");
         user1.setEmail("Adeh@email.com");
@@ -142,12 +134,12 @@ class UserRepositoryImplTest {
         User user = new User();
         User user1 = new User();
 
-        user.setPhoneNumber("2209");
+
         user.setFirstName("Dee");
         user.setLastName("Ade");
         user.setEmail("Ade@email.com");
 
-        user1.setPhoneNumber("0543");
+
         user1.setFirstName("Wonders");
         user1.setLastName("Adeh");
         user1.setEmail("Adeh@email.com");
@@ -164,12 +156,10 @@ class UserRepositoryImplTest {
         User user = new User();
         User user1 = new User();
 
-        user.setPhoneNumber("2209");
         user.setFirstName("Dee");
         user.setLastName("Ade");
         user.setEmail("Ade@email.com");
 
-        user1.setPhoneNumber("0543");
         user1.setFirstName("Wonders");
         user1.setLastName("Adeh");
         user1.setEmail("Adeh@email.com");
@@ -177,7 +167,6 @@ class UserRepositoryImplTest {
         userRepository.save(user);
         userRepository.save(user1);
 
-        user.setPhoneNumber("0543");
         user.setLastName("Josh");
 
         userRepository.save(user);

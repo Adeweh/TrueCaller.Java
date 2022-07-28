@@ -10,7 +10,7 @@ import java.util.Objects;
 public class UserRepositoryImpl implements UserRepository {
     private int counter;
 
-    private List<User> allUsers = new ArrayList<>();
+    private ArrayList<User> allUsers = new ArrayList<>();
     @Override
     public User save(User user) {
         for (var update: allUsers) {
@@ -84,8 +84,10 @@ public class UserRepositoryImpl implements UserRepository {
 
     @Override
     public User findByEmail(String email) {
-        for (var user: allUsers){
-            if(user.getEmail().equalsIgnoreCase(email)) return user;
+        for (var user: allUsers) {
+            if (user.getEmail().equalsIgnoreCase(email)){
+                return user;
+        }
         }
         return null;
     }

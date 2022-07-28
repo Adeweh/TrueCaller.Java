@@ -1,15 +1,12 @@
 package africa.semicolon.trueCaller.dtos.requests;
 
-public class RegisterRequest {
+public class AddContactRequest {
+
     private String firstName;
-
     private String lastName;
-
-    private String username;
+    private String phoneNumber;
     private String email;
-
-    private String passWord;
-
+    private String userEmail;
 
     public String getFirstName() {
         return firstName;
@@ -27,12 +24,12 @@ public class RegisterRequest {
         this.lastName = lastName;
     }
 
-    public String getUsername() {
-        return username;
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
     public String getEmail() {
@@ -43,12 +40,11 @@ public class RegisterRequest {
         this.email = email;
     }
 
-    public String getPassWord() {
-        return passWord;
+    public String getUserEmail() {
+        return userEmail;
     }
 
-    public void setPassWord(String passWord) {
-        this.passWord = passWord;
+    public void setUserEmail(String userEmail) {
+        this.userEmail = userEmail;
     }
 }
-

@@ -2,7 +2,9 @@ package africa.semicolon.trueCaller.services;
 
 import africa.semicolon.trueCaller.data.models.Contact;
 import africa.semicolon.trueCaller.data.models.User;
+import africa.semicolon.trueCaller.dtos.requests.AddContactRequest;
 import africa.semicolon.trueCaller.dtos.requests.RegisterRequest;
+import africa.semicolon.trueCaller.dtos.requests.responses.AddContactResponse;
 import africa.semicolon.trueCaller.dtos.requests.responses.RegisterResponse;
 
 import java.util.Collection;
@@ -12,14 +14,12 @@ public interface UserService {
 
     RegisterResponse register(RegisterRequest request);
 
+    AddContactResponse addContact(AddContactRequest addRequest);
+
+
 
     int getNumberOfUsers();
 
-    void delete(int id);
+    List<Contact> findContactsBelongingTo(String email);
 
-    List<User> getByFirstName(String firstName);
-
-    List<User> getByLastName(String lastName);
-
-    List<User> findAll();
 }
