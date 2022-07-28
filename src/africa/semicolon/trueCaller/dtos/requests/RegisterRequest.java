@@ -5,6 +5,16 @@ public class RegisterRequest {
 
     private String lastName;
 
+    private String phoneNumber;
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
     private String username;
     private String email;
 
