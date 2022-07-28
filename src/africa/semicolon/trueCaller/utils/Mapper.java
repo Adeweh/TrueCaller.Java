@@ -11,7 +11,7 @@ public class Mapper {
         user.setFirstName(request.getFirstName());
         user.setLastName(request.getLastName());
         user.setEmail(request.getEmail());
-        user.setPassWord(request.getPassWord());
+      //  user.setPassWord(request.getPassWord());
     }
     public static void map(AddContactRequest addRequest, Contact contact) {
 
