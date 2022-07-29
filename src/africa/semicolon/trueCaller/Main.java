@@ -3,8 +3,12 @@ package africa.semicolon.trueCaller;
 import africa.semicolon.trueCaller.controllers.UserController;
 import africa.semicolon.trueCaller.dtos.requests.AddContactRequest;
 import africa.semicolon.trueCaller.dtos.requests.RegisterRequest;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.util.Scanner;
+
+@SpringBootApplication
 
 public class Main {
 
@@ -12,6 +16,7 @@ public class Main {
     private static UserController userController = new UserController();
 
     public static void main(String[] args) {
+        SpringApplication.run(Main.class, args);
         displayMenu();
         //prompt user with menu
         //if user selects a, b, c direct them
