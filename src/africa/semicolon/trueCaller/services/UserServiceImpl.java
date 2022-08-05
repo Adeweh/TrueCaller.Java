@@ -2,26 +2,32 @@ package africa.semicolon.trueCaller.services;
 
 import africa.semicolon.trueCaller.data.models.Contact;
 import africa.semicolon.trueCaller.data.models.User;
-import africa.semicolon.trueCaller.data.repositories.ContactRepository;
-import africa.semicolon.trueCaller.data.repositories.ContactRepositoryImpl;
 import africa.semicolon.trueCaller.data.repositories.UserRepository;
-import africa.semicolon.trueCaller.data.repositories.UserRepositoryImpl;
 import africa.semicolon.trueCaller.dtos.requests.AddContactRequest;
 import africa.semicolon.trueCaller.dtos.requests.RegisterRequest;
 import africa.semicolon.trueCaller.dtos.requests.responses.AddContactResponse;
 import africa.semicolon.trueCaller.dtos.requests.responses.RegisterResponse;
+import africa.semicolon.trueCaller.dtos.requests.responses.AllContactResponse;
 import africa.semicolon.trueCaller.exceptions.UserExistsException;
 import africa.semicolon.trueCaller.utils.Mapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
-
+@Service
 public class UserServiceImpl implements UserService {
+    @Autowired
 
     private final UserRepository userRepository;
 
-    private ContactService contactService;
+    private RegisterResponse response = new RegisterResponse();
+
+    @Autowired
+
+    private final ContactService contactService;
 
 
     public UserServiceImpl(UserRepository userRepository, ContactService contactService){
@@ -29,11 +35,11 @@ public class UserServiceImpl implements UserService {
         this.contactService = contactService;
     }
 
-    public  UserServiceImpl(){
-        this.userRepository = new UserRepositoryImpl();
-        ContactRepository contactRepository = new ContactRepositoryImpl();
-        this.contactService = new ContactServiceImpl(contactRepository);
-    }
+//    public  UserServiceImpl(){
+//        this.userRepository = new UserRepositoryImpl();
+//        ContactRepository contactRepository = new ContactRepositoryImpl();
+//        this.contactService = new ContactServiceImpl(contactRepository);
+//    }
 
     @Override
     public RegisterResponse register(RegisterRequest request) {
@@ -56,13 +62,20 @@ public class UserServiceImpl implements UserService {
     }
     @Override
     public int getNumberOfUsers() {
-        return userRepository.count();
+        return (int) userRepository.count();
     }
 
     @Override
-    public List<Contact> findContactsBelongingTo(String email) {
+    public List<AllContactResponse> findContactsBelongingTo(String email) {
         User user = userRepository.findByEmail(email);
-        return user.getAllContacts();
+        List<Contact> userContacts = user.getAllContacts();
+        List<AllContactResponse> responses = new ArrayList<>();
+        userContacts.forEach(contact -> {
+            AllContactResponse singleResponse = new AllContactResponse();
+            Mapper.map(singleResponse, contact);
+            responses.add(singleResponse);
+        });
+        return responses;
     }
 
     @Override
@@ -76,7 +89,12 @@ public class UserServiceImpl implements UserService {
         user.getAllContacts().add(newContact);
 
         userRepository.save(user);
-        return null;
+        
+        AddContactResponse contactResponse = new AddContactResponse();
+        contactResponse.setMessage(String.format("%s successfully added.", addRequest.getFirstName()));
+        return contactResponse;
+        
+        
     }
 
 

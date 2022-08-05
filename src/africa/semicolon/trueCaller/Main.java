@@ -39,6 +39,8 @@ public class Main {
         }
     }
 
+
+
     private static void findContactBelongingToUser() {
         var contacts = userController.findContactsBelongingTo("Enter your email");
         for(var contact: contacts){

@@ -2,9 +2,7 @@ package africa.semicolon.trueCaller.services;
 
 
 import africa.semicolon.trueCaller.data.repositories.ContactRepository;
-import africa.semicolon.trueCaller.data.repositories.ContactRepositoryImpl;
 import africa.semicolon.trueCaller.data.repositories.UserRepository;
-import africa.semicolon.trueCaller.data.repositories.UserRepositoryImpl;
 import africa.semicolon.trueCaller.dtos.requests.AddContactRequest;
 import africa.semicolon.trueCaller.dtos.requests.RegisterRequest;
 import africa.semicolon.trueCaller.exceptions.UserExistsException;
