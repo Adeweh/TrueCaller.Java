@@ -24,7 +24,7 @@ public class Main {
 
     private static void displayMenu() {
         String mainMenuPrompt = """
-                Welcome to Fake Caller
+                Welcome to True Caller App
                 1-> Create an Account
                 2-> Add Contact to a user
                 3-> Find contact belonging to user
